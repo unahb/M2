@@ -11,16 +11,16 @@ import java.util.Random;
  */
 public class Person2 {
     /** Holds the persons real name */
-    private String name = new String("Cole Biafore");
+    private String name;
     /**
      * The constructor, takes in the persons
      * name
      * @param pname the person's real name
      */
-
     public Person2(String pname) {
         name = pname;
     }
+    
     /**
      * This method should take the string
      * input and return its characters in
@@ -37,10 +37,10 @@ public class Person2 {
         String output = "";
         Random rand = new Random();
         int val;
-        for (int i = inputArr.length - 1; i >= 0; i--) {
+        for (int i = inputArr.length; i > 0; i--) {
             val = rand.nextInt(i);
             output += inputArr[val];
-            inputArr[val] = inputArr[inputArr.length - 1];
+            inputArr[val] = inputArr[i - 1];
         }
         return output;
     }
